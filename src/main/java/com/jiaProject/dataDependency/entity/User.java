@@ -6,7 +6,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "USER") @Getter
+@Table(name = "LECTURE_USER") @Getter
 @DynamicUpdate
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
