@@ -1,0 +1,47 @@
+extend type Query {
+   userQuery: UserQuery!
+}
+
+extend type Mutation {
+    userMutation: UserMutation!
+}
+
+type UserQuery {
+    #filter에 따라 유저 조회
+    getUserList(input: UserFilter!): GetUserList!
+}
+
+type UserMutation {
+    getUser(input: UserFilter!): GetUser!
+}
+
+input UserFilter {
+    userNo: Int
+    name: String
+    age: Int
+    userType: UserType
+    email: String
+    lectureNo: Int
+}
+
+enum UserType {
+    MEMBER,
+    USER
+}
+
+type GetUserList {
+    user: [User]!
+}
+
+type GetUser {
+    user: User!
+}
+
+type User {
+    userNo: Int!
+    name: String!
+    age: Int!
+    userType: UserType!
+    email: String!
+    lecture: [Int]
+}
