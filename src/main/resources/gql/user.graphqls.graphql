@@ -4,6 +4,26 @@ extend type Query {
 
 extend type Mutation {
     userMutation: UserMutation!
+    lectureMutation: LectureMutation!
+}
+
+type LectureMutation {
+    getLecture(input: LectureInput!): GetLecture!
+}
+
+input LectureInput {
+    title: String!
+    teacher: String!
+    price: Int!
+    room: String!
+}
+
+type GetLecture {
+    lectureNo: Int!
+    title: String!
+    teacher: String!
+    price: Int!
+    room: String!
 }
 
 type UserQuery {

@@ -1,4 +1,4 @@
-package com.jiaProject.dataDependency.controller;
+package com.jiaProject.dataDependency.query;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

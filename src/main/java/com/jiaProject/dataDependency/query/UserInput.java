@@ -1,4 +1,4 @@
-package com.jiaProject.dataDependency.controller;
+package com.jiaProject.dataDependency.query;
 
 import com.jiaProject.dataDependency.dto.UserInputDto;
 import com.jiaProject.dataDependency.entity.User;
