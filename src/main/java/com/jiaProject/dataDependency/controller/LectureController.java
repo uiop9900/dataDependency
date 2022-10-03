@@ -4,6 +4,7 @@ import com.jiaProject.dataDependency.entity.Lecture;
 import com.jiaProject.dataDependency.mapper.MapperLectureInput;
 import com.jiaProject.dataDependency.query.GetLecture;
 import com.jiaProject.dataDependency.query.LectureInput;
+import com.jiaProject.dataDependency.query.LectureQuery;
 import com.jiaProject.dataDependency.service.LectureService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,8 +25,9 @@ public class LectureController {
      */
     public GetLecture insertLecture(final LectureInput input) {
         Lecture lecture = MapperLectureInput.toEntity(input);
-        lectureService.insertLecture(lecture);
-        return null;
+        LectureQuery lectureQuery = lectureService.insertLecture(lecture);
+        GetLecture getLecture = GetLecture.of(lectureQuery);
+        return getLecture;
     }
 }
 

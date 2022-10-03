@@ -54,7 +54,8 @@ public class User {
     }
 
     //===========Builder====================
-    public static UserBuilder userBuiler( //리턴값은 클래스명 + Builer이어야 한다. @Builder로 인해 가능한 메솓,1
+    // 리턴값은 클래스명 + Builer이어야 한다. @Builder로 인해 가능한 메솓,1
+    public static UserBuilder userBuilder(
                                           @NonNull final String name,
                                           @NonNull final int age,
                                           @NonNull final UserTypeCd type,
