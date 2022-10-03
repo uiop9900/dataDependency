@@ -1,5 +1,7 @@
 package com.jiaProject.dataDependency.controller;
 
+import com.jiaProject.dataDependency.entity.Lecture;
+import com.jiaProject.dataDependency.mapper.MapperLectureInput;
 import com.jiaProject.dataDependency.query.GetLecture;
 import com.jiaProject.dataDependency.query.LectureInput;
 import com.jiaProject.dataDependency.service.LectureService;
@@ -21,8 +23,8 @@ public class LectureController {
      * 강의를 생성합니다.
      */
     public GetLecture insertLecture(final LectureInput input) {
-
-        lectureService.insertLecture(input);
+        Lecture lecture = MapperLectureInput.toEntity(input);
+        lectureService.insertLecture(lecture);
         return null;
     }
 }

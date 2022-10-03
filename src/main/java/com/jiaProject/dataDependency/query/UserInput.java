@@ -18,11 +18,4 @@ public class UserInput {
     private UserType type;
     private String email;
 
-    public UserInputDto toInput(UserInput input) {
-        return UserInputDto.builder()
-                .name(name)
-                .age(age)
-                .type(User.UserTypeCd.getUserCd())
-                .build();
-    }
 }
