@@ -32,6 +32,10 @@ public class Lecture {
     @Column
     private String room; // 강의실
 
+    //===========연관관계====================
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="LECTURE_USER", insertable = false, updatable = false)
+    protected User user;
 
     //===========Builder====================
     public static LectureBuilder lectureBuilder( //리턴값은 클래스명 + Builer이어야 한다. @Builder로 인해 가능한 메솓,1

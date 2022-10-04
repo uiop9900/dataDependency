@@ -17,8 +17,8 @@ public class UserInput {
     private UserType type;
     private String email;
 
-    public static User toEntity(UserInput input) {
-        return User.userBuilder(
+    public static User toEntity(final UserInput input) {
+        return User.lectureUserBuilder(
                 input.getName(),
                 input.getAge(),
                 input.getType().getUserTypeCd(),

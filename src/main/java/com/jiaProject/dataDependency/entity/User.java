@@ -4,6 +4,8 @@ import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "LECTURE_USER") @Getter
@@ -32,6 +34,10 @@ public class User {
     @Column
     private String email; // 이메일
 
+    //==============연관관계====================
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Setter @Builder.Default
+    private List<Lecture> lectures = new ArrayList<>();
 
     //==============enum====================
     @Getter
@@ -54,8 +60,8 @@ public class User {
     }
 
     //===========Builder====================
-    // 리턴값은 클래스명 + Builer이어야 한다. @Builder로 인해 가능한 메솓,1
-    public static UserBuilder userBuilder(
+    // 리턴값은 클래스명 + Builer이어야 한다. @Builder로 인해 가능한 메소드
+    public static UserBuilder lectureUserBuilder(
                                           @NonNull final String name,
                                           @NonNull final int age,
                                           @NonNull final UserTypeCd type,
