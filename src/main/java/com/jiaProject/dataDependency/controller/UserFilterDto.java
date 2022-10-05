@@ -1,7 +1,6 @@
 package com.jiaProject.dataDependency.controller;
 
 import com.jiaProject.dataDependency.entity.User;
-import com.jiaProject.dataDependency.enums.UserType;
 import lombok.Builder;
 import lombok.Getter;
 
