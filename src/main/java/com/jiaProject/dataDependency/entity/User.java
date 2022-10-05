@@ -1,5 +1,6 @@
 package com.jiaProject.dataDependency.entity;
 
+import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -62,10 +63,10 @@ public class User {
     //===========Builder====================
     // 리턴값은 클래스명 + Builer이어야 한다. @Builder로 인해 가능한 메소드
     public static UserBuilder lectureUserBuilder(
-                                          @NonNull final String name,
-                                          @NonNull final int age,
-                                          @NonNull final UserTypeCd type,
-                                          @NonNull final String email
+                                          @NotNull final String name,
+                                          @NotNull final int age,
+                                          @NotNull final UserTypeCd type,
+                                          @NotNull final String email
     ) {
         return entityBuilder() //상단에서 선언한 @builder 때문에 사용가능한 메소드2
                 .name(name)

@@ -1,5 +1,6 @@
 package com.jiaProject.dataDependency.entity;
 
+import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -39,10 +40,10 @@ public class Lecture {
 
     //===========Builder====================
     public static LectureBuilder lectureBuilder( //리턴값은 클래스명 + Builer이어야 한다. @Builder로 인해 가능한 메솓,1
-        @NonNull String title,
-        @NonNull String teacher,
-        @NonNull int price,
-        @NonNull String room
+        @NotNull String title,
+        @NotNull String teacher,
+        @NotNull int price,
+        @NotNull String room
     ) {
         return entityBuilder() //상단에서 선언한 @builder 때문에 사용가능한 메소드2
                 .title(title)
