@@ -7,10 +7,30 @@
 # mapper와 dto
 ### mapper: 
 - dto -> Entity로 변환해주는 과정
+- Mapper~~ 클래스는 dto 에서 Entity로 변환하는 메소드가 들어있다.
+
+```
+public static class MapperUser(final UserInput input) {
+  return User.userBuilder (
+    input.getUserName(),
+    ...
+  )
+}
+```
+
 ### dto(Data Transfer Object):  
 - 계층간 데이터 전송을 위해 도메인 모델 대신 사용되는 계층
+- 객체 그 자체를 선언한다.
 - dto는 @Getter, @Setter만 가져야 하며 어떠한 로직도 가져서는 안된다.
+```
+@Getter
+@Builder
+public class UserDto {
+  private String userName;
+  ...
+}
 
+```
 
 <img width="792" alt="스크린샷 2022-10-06 오전 9 57 22" src="https://user-images.githubusercontent.com/96981475/194190037-8b87a09c-3fc8-4219-b422-9df59f4e4553.png">
 
